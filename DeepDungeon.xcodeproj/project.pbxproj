@@ -14,6 +14,8 @@
 		02ECA1D821AF134B0046C74A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ECA1D621AF134B0046C74A /* LaunchScreen.storyboard */; };
 		02ECA1E321AF134B0046C74A /* DeepDungeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1E221AF134B0046C74A /* DeepDungeonTests.swift */; };
 		02ECA1EE21AF134B0046C74A /* DeepDungeonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1ED21AF134B0046C74A /* DeepDungeonUITests.swift */; };
+		02ECA1FD21AF15EF0046C74A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1FC21AF15EF0046C74A /* Item.swift */; };
+		02ECA1FF21AF17C30046C74A /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1FE21AF17C30046C74A /* Shop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		02ECA1E921AF134B0046C74A /* DeepDungeonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeepDungeonUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ECA1ED21AF134B0046C74A /* DeepDungeonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepDungeonUITests.swift; sourceTree = "<group>"; };
 		02ECA1EF21AF134B0046C74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02ECA1FC21AF15EF0046C74A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		02ECA1FE21AF17C30046C74A /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		02ECA1CC21AF13490046C74A /* DeepDungeon */ = {
 			isa = PBXGroup;
 			children = (
+				02ECA1FB21AF15CB0046C74A /* model */,
 				02ECA1CD21AF13490046C74A /* AppDelegate.swift */,
 				02ECA1CF21AF13490046C74A /* ViewController.swift */,
 				02ECA1D121AF13490046C74A /* Main.storyboard */,
@@ -123,6 +128,15 @@
 				02ECA1EF21AF134B0046C74A /* Info.plist */,
 			);
 			path = DeepDungeonUITests;
+			sourceTree = "<group>";
+		};
+		02ECA1FB21AF15CB0046C74A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				02ECA1FC21AF15EF0046C74A /* Item.swift */,
+				02ECA1FE21AF17C30046C74A /* Shop.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				02ECA1D021AF13490046C74A /* ViewController.swift in Sources */,
+				02ECA1FD21AF15EF0046C74A /* Item.swift in Sources */,
 				02ECA1CE21AF13490046C74A /* AppDelegate.swift in Sources */,
+				02ECA1FF21AF17C30046C74A /* Shop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 233584LSTF;
 				INFOPLIST_FILE = DeepDungeon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,6 +467,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 233584LSTF;
 				INFOPLIST_FILE = DeepDungeon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
