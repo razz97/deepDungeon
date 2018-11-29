@@ -11,19 +11,9 @@ import UIKit
 
 class Item {
     
-    // Types of items available
-    enum types: CaseIterable {
-        case body // armor, cap
-        case handheld // arrow, sword, scepter, shield
-        case boots
-        case helmet
-        case ring
-        case potion
-    }
-    
     // General
     let name: String
-    let type: types
+    let type: Shop.category
     let image: UIImage
     let price: Int
     
@@ -33,7 +23,7 @@ class Item {
     let luck: Int
     let magic: Int
     
-    init(name:String,type:types,image:UIImage,price:Int,attack:Int,defense:Int,luck:Int,magic:Int) {
+    init(name:String,type:Shop.category,image:UIImage,price:Int,attack:Int,defense:Int,luck:Int,magic:Int) {
         self.name = name
         self.type = type
         self.image = image

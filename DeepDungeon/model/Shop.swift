@@ -11,14 +11,20 @@ import UIKit
 
 class Shop {
     
-    var items: [Item.types:[Item]] = [:]
+    // Types of items available
+    enum category: CaseIterable {
+        case body // armor, cap
+        case handheld // arrow, sword, scepter, shield
+        case boots
+        case helmet
+        case ring
+        case potion
+    }
+    
+    var items: [category:[Item]] = [:]
     
     init(allItems: [Item]) {
-        for type in Item.types.allCases {
-            items[type] = []
-        }
-        for item in allItems {
-            self.items[item.type]?.append(item)
-        }
+        for type in category.allCases { items[type] = [] }
+        for item in allItems { self.items[item.type]?.append(item) }
     }
 }
