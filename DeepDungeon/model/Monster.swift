@@ -12,19 +12,16 @@ import UIKit
 class Monster {
     let name: String
     let image: UIImage
-    let hardness: Int
+    let hardness: Hardness
     let startLife: Int
-    
     let attack: Int
-
-    
-    
     var currentLife: Int
-    
     let money: Int
     let experience: Int
     
-    init(attack:Int,name:String,life:Int,hardness:Int,money:Int,experience:Int,image:UIImage) {
+    enum Hardness {case low,medium,high}
+    
+    init(attack:Int,name:String,life:Int,hardness:Hardness,money:Int,experience:Int,image:UIImage) {
         self.attack = attack
         self.name = name
         self.startLife = life

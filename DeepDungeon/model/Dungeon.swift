@@ -10,11 +10,15 @@ import Foundation
 
 class Dungeon {
     
-    var monsters: [[Monster]] = []
+    var monsters: [Monster.Hardness: [Monster]] = [
+        Monster.Hardness.low: [],
+        Monster.Hardness.medium: [],
+        Monster.Hardness.high: []
+    ]
     
     init(monsters: [Monster]) {
         for monster in monsters {
-            self.monsters[monster.hardness].append(monster)
+            self.monsters[monster.hardness]!.append(monster)
         }
     }
 }
