@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020E21C421CD5DCD0027E428 /* HeroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020E21C321CD5DCD0027E428 /* HeroView.swift */; };
 		02ECA1CE21AF13490046C74A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1CD21AF13490046C74A /* AppDelegate.swift */; };
 		02ECA1D021AF13490046C74A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1CF21AF13490046C74A /* ViewController.swift */; };
 		02ECA1D321AF13490046C74A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02ECA1D121AF13490046C74A /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020E21C321CD5DCD0027E428 /* HeroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroView.swift; sourceTree = "<group>"; };
 		02ECA1CA21AF13490046C74A /* DeepDungeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeepDungeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02ECA1CD21AF13490046C74A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02ECA1CF21AF13490046C74A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				02ECA1D421AF134B0046C74A /* Assets.xcassets */,
 				02ECA1D621AF134B0046C74A /* LaunchScreen.storyboard */,
 				02ECA1D921AF134B0046C74A /* Info.plist */,
+				020E21C321CD5DCD0027E428 /* HeroView.swift */,
 			);
 			path = DeepDungeon;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			files = (
 				FA8AC80E21AF43B400222151 /* Dungeon.swift in Sources */,
 				FA8AC81821AF4C8F00222151 /* Hero.swift in Sources */,
+				020E21C421CD5DCD0027E428 /* HeroView.swift in Sources */,
 				FA8AC80A21AF3DE500222151 /* Stuff.swift in Sources */,
 				02ECA1D021AF13490046C74A /* ViewController.swift in Sources */,
 				02ECA1FD21AF15EF0046C74A /* Item.swift in Sources */,

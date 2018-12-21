@@ -65,7 +65,6 @@ internal class Hero {
             case .sorcerer: bonus[bonuses.luck] = 3
             case .warrior: bonus[bonuses.defense] = 3
         }
-        
     }
     
     func getAttack() -> Int {
@@ -82,6 +81,14 @@ internal class Hero {
     
     func getDefense() -> Int {
         return stuff.getDefense()  * bonus[bonuses.defense]!
+    }
+    
+    func getView() -> UIView {
+        let view: UIView = UIView()
+        
+        
+        
+        return view
     }
     
 }
