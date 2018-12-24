@@ -50,10 +50,10 @@ class Dao {
         Item(name: "Iron Helmet", type: Shop.category.helmet, image: UIImage(named: "iron_helmet")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
         Item(name: "Silk Helmet", type: Shop.category.helmet, image: UIImage(named: "silk_helmet")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20)
     ]
-    private let heroes: [Hero.heroes:Hero] = [
-        Hero.heroes.warrior: Hero(type: Hero.heroes.warrior, name: "Warrior", image: UIImage(named: "warrior")!, level: Level(), gold: 0, startingLife: 30, stuff: Stuff(items: [])),
-        Hero.heroes.archer: Hero(type: Hero.heroes.archer, name: "Archer", image: UIImage(named: "archer")!, level: Level(), gold: 0, startingLife: 30, stuff: Stuff(items: [])),
-        Hero.heroes.wizard: Hero(type: Hero.heroes.warrior, name: "Wizard", image: UIImage(named: "wizard")!, level: Level(), gold: 0, startingLife: 30, stuff: Stuff(items: []))
+    let heroes: [Hero] = [
+        Hero(type: Hero.heroes.warrior, name: "Warrior", image: UIImage(named: "warrior")!, level: Level(), gold: 0, startingLife: 5, stuff: Stuff(items: [])),
+        Hero(type: Hero.heroes.archer, name: "Archer", image: UIImage(named: "archer")!, level: Level(), gold: 0, startingLife: 3, stuff: Stuff(items: [])),
+        Hero(type: Hero.heroes.warrior, name: "Wizard", image: UIImage(named: "wizard")!, level: Level(), gold: 0, startingLife: 4, stuff: Stuff(items: [])),
     ]
     private let monsters: [Monster] = [
         Monster(attack: 50, name: "Aragog", life: 50, hardness: Monster.Hardness.low, money: 100, experience: 50, image: UIImage(named: "aragog")!),
@@ -87,5 +87,6 @@ class Dao {
         self.dungeon = Dungeon(monsters: monsters)
         self.shop = Shop(allItems: items)
     }
+    
   
 }

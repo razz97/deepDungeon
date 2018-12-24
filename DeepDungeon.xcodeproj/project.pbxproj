@@ -17,6 +17,9 @@
 		02ECA1EE21AF134B0046C74A /* DeepDungeonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1ED21AF134B0046C74A /* DeepDungeonUITests.swift */; };
 		02ECA1FD21AF15EF0046C74A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1FC21AF15EF0046C74A /* Item.swift */; };
 		02ECA1FF21AF17C30046C74A /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02ECA1FE21AF17C30046C74A /* Shop.swift */; };
+		FA02C82F21D01E0C00CD8426 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02C82E21D01E0C00CD8426 /* StatsView.swift */; };
+		FA02C83221D0200200CD8426 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02C83121D0200200CD8426 /* StatView.swift */; };
+		FA02C83421D05D2A00CD8426 /* LifeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02C83321D05D2A00CD8426 /* LifeView.swift */; };
 		FA8AC80821AF3D5400222151 /* Dao.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AC80721AF3D5400222151 /* Dao.swift */; };
 		FA8AC80A21AF3DE500222151 /* Stuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AC80921AF3DE500222151 /* Stuff.swift */; };
 		FA8AC80C21AF3F9900222151 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8AC80B21AF3F9900222151 /* Monster.swift */; };
@@ -60,6 +63,9 @@
 		02ECA1EF21AF134B0046C74A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02ECA1FC21AF15EF0046C74A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		02ECA1FE21AF17C30046C74A /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		FA02C82E21D01E0C00CD8426 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		FA02C83121D0200200CD8426 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		FA02C83321D05D2A00CD8426 /* LifeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeView.swift; sourceTree = "<group>"; };
 		FA8AC80721AF3D5400222151 /* Dao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dao.swift; sourceTree = "<group>"; };
 		FA8AC80921AF3DE500222151 /* Stuff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stuff.swift; sourceTree = "<group>"; };
 		FA8AC80B21AF3F9900222151 /* Monster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 		02ECA1CC21AF13490046C74A /* DeepDungeon */ = {
 			isa = PBXGroup;
 			children = (
+				FA02C83021D01E1C00CD8426 /* view */,
 				FA8AC81921AF69FE00222151 /* persistance */,
 				FA8AC80321AF3B7B00222151 /* logic */,
 				02ECA1FB21AF15CB0046C74A /* model */,
@@ -125,7 +132,6 @@
 				02ECA1D421AF134B0046C74A /* Assets.xcassets */,
 				02ECA1D621AF134B0046C74A /* LaunchScreen.storyboard */,
 				02ECA1D921AF134B0046C74A /* Info.plist */,
-				020E21C321CD5DCD0027E428 /* HeroView.swift */,
 			);
 			path = DeepDungeon;
 			sourceTree = "<group>";
@@ -161,6 +167,17 @@
 				FA8AC81721AF4C8F00222151 /* Hero.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		FA02C83021D01E1C00CD8426 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				020E21C321CD5DCD0027E428 /* HeroView.swift */,
+				FA02C82E21D01E0C00CD8426 /* StatsView.swift */,
+				FA02C83121D0200200CD8426 /* StatView.swift */,
+				FA02C83321D05D2A00CD8426 /* LifeView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		FA8AC80321AF3B7B00222151 /* logic */ = {
@@ -318,7 +335,10 @@
 				02ECA1FD21AF15EF0046C74A /* Item.swift in Sources */,
 				FA8AC81021AF44F300222151 /* Dice.swift in Sources */,
 				02ECA1CE21AF13490046C74A /* AppDelegate.swift in Sources */,
+				FA02C83221D0200200CD8426 /* StatView.swift in Sources */,
+				FA02C83421D05D2A00CD8426 /* LifeView.swift in Sources */,
 				02ECA1FF21AF17C30046C74A /* Shop.swift in Sources */,
+				FA02C82F21D01E0C00CD8426 /* StatsView.swift in Sources */,
 				FA8AC80821AF3D5400222151 /* Dao.swift in Sources */,
 				FA8AC81221AF458300222151 /* Level.swift in Sources */,
 				FA8AC80C21AF3F9900222151 /* Monster.swift in Sources */,

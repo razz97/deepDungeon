@@ -18,7 +18,7 @@ class Stuff {
     }
     
     func getAttack() -> Int {
-        var result: Int = 0
+        var result: Int = 10
         for item in items.values {
             result += item.attack
         }
@@ -26,7 +26,7 @@ class Stuff {
     }
     
     func getDefense() -> Int {
-        var result: Int = 0
+        var result: Int = 10
         for item in items.values {
             result += item.defense
         }
@@ -34,7 +34,7 @@ class Stuff {
     }
     
     func getMagic() -> Int {
-        var result: Int = 0
+        var result: Int = 10
         for item in items.values {
             result += item.magic
         }
@@ -42,7 +42,7 @@ class Stuff {
     }
     
     func getLuck() -> Int {
-        var result: Int = 0
+        var result: Int = 10
         for item in items.values {
             result += item.luck
         }

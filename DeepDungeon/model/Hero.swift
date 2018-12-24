@@ -83,12 +83,12 @@ internal class Hero {
         return stuff.getDefense()  * bonus[bonuses.defense]!
     }
     
-    func getView() -> UIView {
-        let view: UIView = UIView()
-        
-        
-        
-        return view
+    func getStatsView(frame: CGRect) -> StatsView {
+        return StatsView(frame: frame,hero:self)
+    }
+    
+    func getView(frame: CGRect) -> HeroView {
+        return HeroView(frame: frame,hero:self)
     }
     
 }
