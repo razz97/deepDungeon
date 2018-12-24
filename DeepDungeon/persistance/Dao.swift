@@ -33,9 +33,9 @@ class Dao {
         Item(name: "Lucky Scepter", type: Shop.category.handheld, image: UIImage(named: "lucky_scepter")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
         Item(name: "Simple Scepter", type: Shop.category.handheld, image: UIImage(named: "simple_scepter")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
         
-        Item(name: "Diamond Shield", type: Shop.category.handheld, image: UIImage(named: "diamond_shield")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
-        Item(name: "Iron Shield", type: Shop.category.handheld, image: UIImage(named: "iron_shield")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
-        Item(name: "Simple Shield", type: Shop.category.handheld, image: UIImage(named: "simple_shield")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
+        Item(name: "Magic Shield", type: Shop.category.shield, image: UIImage(named: "magic_shield")!, price: 2000, attack: 10, defense: 10, luck: 10, magic: 50),
+        Item(name: "Iron Shield", type: Shop.category.shield, image: UIImage(named: "light_shield")!, price: 2000, attack: 50, defense: 10, luck: 10, magic: 10),
+        Item(name: "Defensive Shield", type: Shop.category.shield, image: UIImage(named: "defensive_shield")!, price: 2000, attack: 10, defense: 50, luck: 10, magic: 10),
         
         Item(name: "Diamond Sword", type: Shop.category.handheld, image: UIImage(named: "diamond_sword")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
         Item(name: "Fire Sword", type: Shop.category.handheld, image: UIImage(named: "fire_sword")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),
@@ -51,9 +51,9 @@ class Dao {
         Item(name: "Silk Helmet", type: Shop.category.helmet, image: UIImage(named: "silk_helmet")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20)
     ]
     let heroes: [Hero] = [
-        Hero(type: Hero.heroes.warrior, name: "Warrior", image: UIImage(named: "warrior")!, level: Level(), gold: 0, startingLife: 5, stuff: Stuff(items: [])),
+        Hero(type: Hero.heroes.warrior, name: "Warrior", image: UIImage(named: "warrior")!, level: Level(), gold: 0, startingLife: 5, stuff: Stuff(items: [Item(name: "Diamond Bow", type: Shop.category.handheld, image: UIImage(named: "diamond_arrow")!, price: 2000, attack: 20, defense: 20, luck: 20, magic: 20),])),
         Hero(type: Hero.heroes.archer, name: "Archer", image: UIImage(named: "archer")!, level: Level(), gold: 0, startingLife: 3, stuff: Stuff(items: [])),
-        Hero(type: Hero.heroes.warrior, name: "Wizard", image: UIImage(named: "wizard")!, level: Level(), gold: 0, startingLife: 4, stuff: Stuff(items: [])),
+        Hero(type: Hero.heroes.wizard, name: "Wizard", image: UIImage(named: "wizard")!, level: Level(), gold: 0, startingLife: 4, stuff: Stuff(items: [])),
     ]
     private let monsters: [Monster] = [
         Monster(attack: 50, name: "Aragog", life: 50, hardness: Monster.Hardness.low, money: 100, experience: 50, image: UIImage(named: "aragog")!),

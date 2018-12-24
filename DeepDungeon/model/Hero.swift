@@ -37,6 +37,10 @@ internal class Hero {
         self.genBonuses()
     }
     
+    convenience init() {
+        self.init(type: heroes.archer,name:"",image:UIImage(),level:Level(),gold:0,startingLife:0,stuff:Stuff(items: []))
+    }
+    
     
     func defend(attack: Int) -> Bool {
         self.currentLife -= attack

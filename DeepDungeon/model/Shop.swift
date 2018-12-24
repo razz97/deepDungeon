@@ -17,6 +17,7 @@ class Shop {
         case handheld // arrow, sword, scepter, shield
         case boots
         case helmet
+        case shield
     }
     
     var items: [category:[Item]] = [:]

@@ -38,6 +38,7 @@ class StatView: UIView {
         img = UIImageView(frame: CGRect(origin: CGPoint(x:margin , y:margin), size: CGSize(width: allWidth, height: height)))
         val = UILabel(frame: CGRect(origin: CGPoint(x:margin + allWidth, y:margin), size: CGSize(width: allWidth, height: height)))
         val.textColor = UIColor.white
+        val.font = .systemFont(ofSize: 20)
         val.adjustsFontSizeToFitWidth = true;
         addSubview(img)
         addSubview(val)

@@ -36,6 +36,7 @@ class LifeView: UIView {
         let allWidths = (frame.width - 2 * margin) * 0.2
         for i in 1...5 {
             let tmp: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: margin + allWidths * CGFloat(i - 1),y:margin), size: CGSize(width: allWidths, height: height)))
+            tmp.image = empty
             hearts.append(tmp)
             self.addSubview(tmp)
         }
