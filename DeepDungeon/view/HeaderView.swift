@@ -16,12 +16,12 @@ class HeaderView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setupViews()
     }
     
     convenience init(frame: CGRect,title: String) {
@@ -29,14 +29,13 @@ class HeaderView: UIView {
         setTitle(title: title)
     }
     
-    func setup() {
+    func setupViews() {
         addBack()
         addTitle()
     }
     
     func addTitle() {
         title = UILabel(frame: CGRect(origin: CGPoint(x:0,y:0), size: CGSize(width: frame.width, height: frame.height)))
-        title.text = "Inventory"
         title.textColor = UIColor.white
         title.textAlignment = .center
         title.adjustsFontSizeToFitWidth = true
@@ -49,7 +48,7 @@ class HeaderView: UIView {
         back.setTitle("Back", for: .normal)
         back.backgroundColor = UIColor.gray
         back.layer.cornerRadius = 10
-        back.titleLabel?.font =  .systemFont(ofSize: 25)
+        back.titleLabel?.font =  .systemFont(ofSize: 20)
         back.titleLabel?.adjustsFontSizeToFitWidth = true
         addSubview(back)
     }

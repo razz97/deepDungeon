@@ -17,6 +17,10 @@ class Stuff {
         for item in items { self.items[item.type] = item }
     }
     
+    func add(item: Item) {
+        items[item.type] = item
+    }
+    
     func getAttack() -> Int {
         var result: Int = 10
         for item in items.values {

@@ -12,12 +12,23 @@ import UIKit
 class Shop {
     
     // Types of items available
-    enum category: CaseIterable {
-        case body // armor, cap
-        case handheld // arrow, sword, scepter, shield
-        case boots
-        case helmet
-        case shield
+    enum category: String, CaseIterable {
+        case body = "Body"// armor, cap
+        case handheld = "Guns" // arrow, sword, scepter
+        case boots = "Boots"
+        case helmet = "Helmets"
+        case shield = "Shields"
+        
+        init?(index : Int) {
+            switch index {
+            case 0: self = .body
+            case 1: self = .handheld
+            case 2: self = .boots
+            case 3: self = .helmet
+            case 4: self = .shield
+            default: return nil
+            }
+        }
     }
     
     var items: [category:[Item]] = [:]

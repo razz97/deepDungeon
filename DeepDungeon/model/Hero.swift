@@ -9,7 +9,16 @@
 import Foundation
 import UIKit
 
-internal class Hero {
+internal class Hero: Fighter {
+    
+    func getImage() -> UIImage {
+        return image
+    }
+    
+    func getLife() -> Int {
+        return startingLife
+    }
+    
     
     var name: String
     var image: UIImage
@@ -41,13 +50,21 @@ internal class Hero {
         self.init(type: heroes.archer,name:"",image:UIImage(),level:Level(),gold:0,startingLife:0,stuff:Stuff(items: []))
     }
     
+    func buy(item: Item) -> Bool {
+        if gold <= item.price {
+            return false
+        }
+        gold -= item.price
+        stuff.add(item: item)
+        return true
+    }
     
     func defend(attack: Int) -> Bool {
         self.currentLife -= attack
         return self.currentLife > 0
     }
     
-    func attack() -> Int {
+    func doAttack() -> Int {
         var result = 0
         for item in stuff.items.values {
             result += item.attack * bonus[bonuses.attack]!

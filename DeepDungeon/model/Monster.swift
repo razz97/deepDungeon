@@ -9,30 +9,47 @@
 import Foundation
 import UIKit
 
-class Monster {
+class Monster: Fighter {
+    
+    func getImage() -> UIImage {
+        return image
+    }
+    
+    func getLife() -> Int {
+        return startLife
+    }
+    
     let name: String
     let image: UIImage
-    let hardness: Hardness
+    let hardness: UIColor
     let startLife: Int
     let attack: Int
     var currentLife: Int
     let money: Int
     let experience: Int
     
-    enum Hardness {case low,medium,high}
+    enum Hardness: Int {
+        case low
+        case medium
+        case high
+    }
     
     init(attack:Int,name:String,life:Int,hardness:Hardness,money:Int,experience:Int,image:UIImage) {
         self.attack = attack
         self.name = name
         self.startLife = life
         self.currentLife = life
-        self.hardness = hardness
         self.money = money
         self.experience = experience
         self.image = image
+        switch (hardness) {
+            case .high: self.hardness = .red
+            case .low: self.hardness = .green
+            case .medium: self.hardness = .orange
+        }
     }
     
-    func doAttack() -> Int {
+    func getAttack() -> Int {
         return attack
     }
     

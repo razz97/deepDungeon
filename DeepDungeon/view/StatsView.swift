@@ -33,6 +33,11 @@ class StatsView: UIView {
         self.init(frame: frame)
         setData(hero: hero)
     }
+    
+    convenience init(frame: CGRect,item: Item) {
+        self.init(frame: frame)
+        setData(item: item)
+    }
 
     func setupViews() {
         setSizes()
@@ -45,10 +50,10 @@ class StatsView: UIView {
     func setData(hero: Hero) {
         stats["damage"]!.setData(val: hero.getAttack())
         stats["magic"]!.setData(val: hero.getMagic())
-        stats["money"]!.setData(val: 0)
+        stats["money"]!.setData(val: hero.gold)
         stats["defense"]!.setData(val: hero.getDefense())
         stats["luck"]!.setData(val: hero.getLuck())
-        stats["xp"]!.setData(val: 0)
+        stats["xp"]!.setData(val: hero.level.currentLevel)
         name.text = hero.name
         life.setHearts(amount: hero.startingLife)
     }
@@ -93,5 +98,18 @@ class StatsView: UIView {
     func deleteBackground() {
         background.removeFromSuperview()
     }
+    
+    func setData(item:Item) {
+        stats["xp"]!.removeFromSuperview()
+        life.removeFromSuperview()
+        stats["damage"]!.setData(val: item.attack)
+        stats["magic"]!.setData(val: item.magic)
+        stats["money"]!.setData(val: item.price)
+        stats["defense"]!.setData(val: item.defense)
+        stats["luck"]!.setData(val: item.luck)
+        name.text = item.name
+        name.frame = CGRect(origin: CGPoint(x:margin,y:margin), size: CGSize(width: allWidths*3, height: allHeights))
+    }
+    
     
 }

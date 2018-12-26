@@ -52,7 +52,7 @@ class StuffView: UIView {
     
     func setData(stuff: Stuff) {
         for item in stuff.items.values {
-            items[item.type]!.image = item.image
+            items[item.type]!.image = UIImage(named:item.image)
         }
     }
     

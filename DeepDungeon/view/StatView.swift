@@ -36,6 +36,7 @@ class StatView: UIView {
         let height: CGFloat = frame.height - 2*margin
         let allWidth: CGFloat = width * 0.5
         img = UIImageView(frame: CGRect(origin: CGPoint(x:margin , y:margin), size: CGSize(width: allWidth, height: height)))
+        img.contentMode = .scaleAspectFit
         val = UILabel(frame: CGRect(origin: CGPoint(x:margin + allWidth, y:margin), size: CGSize(width: allWidth, height: height)))
         val.textColor = UIColor.white
         val.font = .systemFont(ofSize: 20)

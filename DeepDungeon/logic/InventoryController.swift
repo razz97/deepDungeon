@@ -40,22 +40,8 @@ class InventoryController: UIViewController {
     
     func getHeader(width: CGFloat,height: CGFloat) -> UIView {
         let header: HeaderView = HeaderView(frame: CGRect(origin: CGPoint(x:0,y:0), size: CGSize(width: width, height: height)))
-        
-//        let header2 = UIView(frame: CGRect(origin: CGPoint(x:0,y:0), size: CGSize(width: width, height: height)))
-//        let title = UILabel(frame: CGRect(origin: CGPoint(x:0,y:0), size: CGSize(width: width, height: height)))
-//        let back = UIButton(frame: CGRect(origin: CGPoint(x:0,y:height*0.25), size: CGSize(width: width*0.2, height: height*0.5)))
-//        title.text = "Inventory"
-//        title.textColor = UIColor.white
-//        title.textAlignment = .center
-//        title.adjustsFontSizeToFitWidth = true
-//        title.font = title.font.withSize(40)
-//        back.setTitle("Back", for: .normal)
-        
         header.back.addTarget(self, action: #selector(onBackPress), for: .touchUpInside)
-//        back.backgroundColor = UIColor.gray
-//        back.layer.cornerRadius = 10
-//        header.addSubview(title)
-//        header.addSubview(back)
+        header.setTitle(title: "Inventory")
         return header
     }
     

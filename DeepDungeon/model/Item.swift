@@ -14,7 +14,7 @@ class Item {
     // General
     let name: String
     let type: Shop.category
-    let image: UIImage
+    let image: String
     let price: Int
     
     // Stats for user
@@ -23,7 +23,9 @@ class Item {
     let luck: Int
     let magic: Int
     
-    init(name:String,type:Shop.category,image:UIImage,price:Int,attack:Int,defense:Int,luck:Int,magic:Int) {
+    enum stats:CaseIterable {case attack, defense, luck, magic}
+    
+    init(name:String,type:Shop.category,image:String,price:Int,attack:Int,defense:Int,luck:Int,magic:Int) {
         self.name = name
         self.type = type
         self.image = image
