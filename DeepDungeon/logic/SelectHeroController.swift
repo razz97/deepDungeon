@@ -8,34 +8,25 @@
 
 import UIKit
 
-var hero: Hero = Hero()
-
-class SelectHeroController: UIViewController {
+class SelectHeroController: BaseViewController {
     
     let margin: CGFloat = UIScreen.main.bounds.height * 0.05
-
+    var heroHeight: CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let heroes: [Hero] = dao.heroes
-        let cont: UIView = getAutosizedContainer()
-        let heroHeight: CGFloat = cont.frame.height / CGFloat(heroes.count) - margin
-        for i in 0..<heroes.count {
-            let tmp: HeroView = heroes[i].getView(frame: CGRect(
-                origin: CGPoint(x: 0, y: CGFloat(i)*(heroHeight + margin)),
-                size: CGSize(width: cont.frame.width, height: heroHeight)))
-            tmp.addTarget(self, action: #selector(onSelectedHero), for: .primaryActionTriggered)
-            cont.addSubview(tmp)
+        heroHeight = cont.frame.height / CGFloat(dao.heroes.count) - margin
+        for i in 0..<dao.heroes.count {
+            addHero(index: i)
         }
-        view.addSubview(cont)
-        view.backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 54/255, alpha: 1)
     }
     
-    func getAutosizedContainer() -> UIView {
-        let verMargin: CGFloat = UIScreen.main.bounds.height * 0.1
-        let horMargin: CGFloat = UIScreen.main.bounds.width * 0.05
-        let usableWidth = UIScreen.main.bounds.width - 2*horMargin
-        let usableHeight = UIScreen.main.bounds.height - 2*verMargin
-        return UIView(frame: CGRect(origin: CGPoint(x:horMargin,y:verMargin), size: CGSize(width: usableWidth, height: usableHeight)))
+    func addHero(index: Int) {
+        let origin: CGPoint = CGPoint(x: 0, y: CGFloat(index)*(heroHeight + margin))
+        let size: CGSize = CGSize(width: cont.frame.width, height: heroHeight)
+        let hero: HeroView = HeroView(frame: CGRect(origin: origin,size: size),hero: dao.heroes[index])
+        hero.addTarget(self, action: #selector(onSelectedHero), for: .primaryActionTriggered)
+        cont.addSubview(hero)
     }
     
     @objc func onSelectedHero(sender: HeroView) {

@@ -12,14 +12,14 @@ import UIKit
 
 class Level {
     
-    var experience: Int = 0
-    var expLevel: Int = 100
-    var currentLevel: Int = 1
-    private let ADD_LEVEL_EXP: Int = 30
+    private(set) var experience: Int = 0
+    private(set) var expLevel: Int = 150
+    private(set) var currentLevel: Int = 1
+    private let ADD_LEVEL_EXP: Int = 50
     
     func add(experience: Int) -> Bool {
         self.experience += experience
-        if (experience >= expLevel) {
+        if (self.experience >= expLevel) {
             currentLevel += 1
             self.experience = self.experience - expLevel
             expLevel += ADD_LEVEL_EXP

@@ -43,8 +43,11 @@ class LifeView: UIView {
     }
     
     func setHearts(amount: Int) {
-        for i in 0..<amount {
-            hearts[i].image = filled
+        for i in 0...4 { hearts[i].image = empty }
+        if amount > 0 && amount <= 5 {
+            for i in 0..<amount {
+                hearts[i].image = filled
+            }
         }
     }
 }

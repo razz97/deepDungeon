@@ -11,7 +11,6 @@ import UIKit
 
 class Shop {
     
-    // Types of items available
     enum category: String, CaseIterable {
         case body = "Body"// armor, cap
         case handheld = "Guns" // arrow, sword, scepter

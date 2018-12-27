@@ -12,9 +12,7 @@ import UIKit
 extension ShopController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        if (view != nil) {
-            return view!
-        }
+        if (view != nil) { return view! }
         if (pickerView.tag == ITEM_TAG) {
             return ItemView(frame: CGRect(origin: CGPoint(x:0,y:0), size: CGSize(width: allWidths, height: 130)), item: dao.shop.items[categorySelected]![row])
         }
@@ -38,31 +36,21 @@ extension ShopController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if (pickerView.tag == ITEM_TAG) {
-            return dao.shop.items[categorySelected]!.count
-        }
-        return Shop.category.allCases.count
+        return pickerView.tag == ITEM_TAG ? dao.shop.items[categorySelected]!.count : Shop.category.allCases.count
     }
     
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        if (pickerView.tag == ITEM_TAG) {
-            return 130
-        }
-        return 60
+        return pickerView.tag == ITEM_TAG ? 130 : 60
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if (pickerView.tag == ITEM_TAG) {
             itemSelected = dao.shop.items[categorySelected]![row]
         } else {
-            changeCategory(index: row)
+            categorySelected = Shop.category(index: row)!
+            itemPicker.reloadAllComponents()
+            itemPicker.selectRow(0, inComponent: 0, animated: true)
+            self.pickerView(itemPicker, didSelectRow: 0, inComponent: 0)
         }
-    }
-    
-    func changeCategory(index: Int) {
-        categorySelected = Shop.category(index: index)!
-        itemPicker.reloadAllComponents()
-        itemPicker.selectRow(0, inComponent: 0, animated: true)
-        self.pickerView(itemPicker, didSelectRow: 0, inComponent: 0)
     }
 }

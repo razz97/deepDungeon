@@ -11,13 +11,10 @@ import UIKit
 
 class Item {
     
-    // General
     let name: String
     let type: Shop.category
     let image: String
     let price: Int
-    
-    // Stats for user
     let attack: Int
     let defense: Int
     let luck: Int
@@ -35,6 +32,5 @@ class Item {
         self.luck = luck
         self.magic = magic
     }
-    
     
 }

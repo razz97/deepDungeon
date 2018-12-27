@@ -19,7 +19,6 @@ class MonsterView: UIView {
     var nameHeight: CGFloat = 0
     var statHeight: CGFloat = 0
     var allWidths: CGFloat = 0
-    var height: CGFloat = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,12 +36,22 @@ class MonsterView: UIView {
     }
     
     func setupViews() {
-        setSizes()
+        margin = frame.height * 0.2
+        statHeight = (frame.height - 2*margin) * 0.4
+        nameHeight = (frame.height - 2*margin) * 0.6
+        allWidths = (frame.width - 2*margin) * 0.25
         addBackground()
         addStats()
         addName()
-        addImage()
-        addLife()
+        addLifeAndImage()
+    }
+    
+    func addLifeAndImage() {
+        life = LifeView(frame: CGRect(origin: CGPoint(x:margin + 2*allWidths,y:margin), size: CGSize(width: 2*allWidths, height: nameHeight)))
+        addSubview(life)
+        image = UIImageView(frame: CGRect(origin: CGPoint(x:margin*0.6,y:margin), size: CGSize(width: allWidths, height: (frame.height - 2*margin))))
+        image.contentMode = .scaleAspectFit
+        addSubview(image)
     }
     
     func addBackground() {
@@ -66,25 +75,6 @@ class MonsterView: UIView {
         name.font = .systemFont(ofSize: 30)
         name.adjustsFontSizeToFitWidth = true
         addSubview(name)
-    }
-    
-    func addLife() {
-        life = LifeView(frame: CGRect(origin: CGPoint(x:margin + 2*allWidths,y:margin), size: CGSize(width: 2*allWidths, height: nameHeight)))
-        addSubview(life)
-    }
-    
-    func addImage() {
-        image = UIImageView(frame: CGRect(origin: CGPoint(x:margin*0.6,y:margin), size: CGSize(width: allWidths, height: height)))
-        image.contentMode = .scaleAspectFit
-        addSubview(image)
-    }
-    
-    func setSizes() {
-        margin = frame.height * 0.2
-        statHeight = (frame.height - 2*margin) * 0.4
-        nameHeight = (frame.height - 2*margin) * 0.6
-        allWidths = (frame.width - 2*margin) * 0.25
-        height = (frame.height - 2*margin)
     }
     
     func setData(monster: Monster) {

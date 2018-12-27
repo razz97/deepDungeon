@@ -21,36 +21,35 @@ class Stuff {
         items[item.type] = item
     }
     
-    func getAttack() -> Int {
-        var result: Int = 10
+    var attack: Int {
+        var result: Int = 1
         for item in items.values {
             result += item.attack
         }
         return result
     }
     
-    func getDefense() -> Int {
-        var result: Int = 10
+    var defense: Int {
+        var result: Int = 1
         for item in items.values {
             result += item.defense
         }
         return result
     }
     
-    func getMagic() -> Int {
-        var result: Int = 10
+    var magic: Int {
+        var result: Int = 1
         for item in items.values {
             result += item.magic
         }
         return result
     }
     
-    func getLuck() -> Int {
-        var result: Int = 10
+    var luck: Int {
+        var result: Int = 1
         for item in items.values {
             result += item.luck
         }
         return result
     }
-    
 }

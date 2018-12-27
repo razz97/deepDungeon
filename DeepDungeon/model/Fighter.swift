@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol Fighter {
-    func getAttack() -> Int
-    func getImage() -> UIImage
-    func getLife() -> Int
+    var attack: Int { get }
+    var image: UIImage { get }
+    var currentLife: Int { get }
 }

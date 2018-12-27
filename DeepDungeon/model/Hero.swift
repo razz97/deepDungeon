@@ -11,15 +11,6 @@ import UIKit
 
 internal class Hero: Fighter {
     
-    func getImage() -> UIImage {
-        return image
-    }
-    
-    func getLife() -> Int {
-        return startingLife
-    }
-    
-    
     var name: String
     var image: UIImage
     var level: Level
@@ -30,6 +21,15 @@ internal class Hero: Fighter {
     var defeated: [Monster] = []
     var type: heroes
     var bonus: [bonuses:Int] = [:]
+    var attack: Int { return stuff.attack * bonus[bonuses.attack]! + level.currentLevel }
+    var magic: Int { return stuff.magic * bonus[bonuses.magic]! + level.currentLevel }
+    var luck: Int { return stuff.luck * bonus[bonuses.luck]! + level.currentLevel }
+    var defense: Int { return stuff.defense  * bonus[bonuses.defense]! + level.currentLevel } 
+    var dices: Int {
+        let result = attack + magic + luck + defense
+        if result < 250 { return 1 }
+        return result < 500 ? 2 : 3
+    }
     
     enum heroes { case wizard, sorcerer, archer, warrior }
     enum bonuses { case attack, magic, defense, luck }
@@ -50,8 +50,17 @@ internal class Hero: Fighter {
         self.init(type: heroes.archer,name:"",image:UIImage(),level:Level(),gold:0,startingLife:0,stuff:Stuff(items: []))
     }
     
+    func defeatMonster(monster: Monster) -> Bool {
+        gold += monster.money
+        if (level.add(experience: monster.experience)) {
+            if startingLife < 5 { startingLife += 1 }
+            return true
+        }
+        return false
+    }
+    
     func buy(item: Item) -> Bool {
-        if gold <= item.price {
+        if gold < item.price {
             return false
         }
         gold -= item.price
@@ -59,57 +68,17 @@ internal class Hero: Fighter {
         return true
     }
     
-    func defend(attack: Int) -> Bool {
-        self.currentLife -= attack
-        return self.currentLife > 0
-    }
-    
-    func doAttack() -> Int {
-        var result = 0
-        for item in stuff.items.values {
-            result += item.attack * bonus[bonuses.attack]!
-            result += item.magic * bonus[bonuses.magic]!
-            result += item.defense * bonus[bonuses.defense]!
-            result += item.luck * bonus[bonuses.luck]!
-        }
-        return result
-    }
-    
-    func genBonuses() {
+    private func genBonuses() {
         bonus[bonuses.magic] = 1
         bonus[bonuses.attack] = 1
         bonus[bonuses.defense] = 1
         bonus[bonuses.luck] = 1
         switch type {
-            case .archer: bonus[bonuses.attack] = 3
-            case .wizard: bonus[bonuses.magic] = 3
-            case .sorcerer: bonus[bonuses.luck] = 3
-            case .warrior: bonus[bonuses.defense] = 3
+        case .archer: bonus[bonuses.attack] = 3
+        case .wizard: bonus[bonuses.magic] = 3
+        case .sorcerer: bonus[bonuses.luck] = 3
+        case .warrior: bonus[bonuses.defense] = 3
         }
-    }
-    
-    func getAttack() -> Int {
-        return stuff.getAttack() * bonus[bonuses.attack]!
-    }
-    
-    func getMagic() -> Int {
-        return stuff.getMagic() * bonus[bonuses.magic]!
-    }
-    
-    func getLuck() -> Int {
-        return stuff.getLuck() * bonus[bonuses.luck]!
-    }
-    
-    func getDefense() -> Int {
-        return stuff.getDefense()  * bonus[bonuses.defense]!
-    }
-    
-    func getStatsView(frame: CGRect) -> StatsView {
-        return StatsView(frame: frame,hero:self)
-    }
-    
-    func getView(frame: CGRect) -> HeroView {
-        return HeroView(frame: frame,hero:self)
     }
     
 }

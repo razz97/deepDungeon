@@ -13,7 +13,6 @@ class StatView: UIView {
     
     var img: UIImageView = UIImageView()
     var val: UILabel = UILabel()
-    var name: UILabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
